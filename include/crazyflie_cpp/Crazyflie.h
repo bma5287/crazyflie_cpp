@@ -137,6 +137,11 @@ public:
     float qx, float qy, float qz, float qw,
     float rollRate, float pitchRate, float yawRate);
 
+/************************************ADDED SETPOINT FOR GTC ************************/
+  void sendGtcSetpoint(
+     uint16_t mode, float cmd1, float cmd2, float cmd3);
+/************************************ADDED SETPOINT FOR GTC ************************/
+
   void sendVelocityWorldSetpoint(
     float x, float y, float z, float yawRate);
 

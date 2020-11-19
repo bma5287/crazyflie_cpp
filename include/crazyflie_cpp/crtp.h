@@ -1036,6 +1036,24 @@ CHECKSIZE(crtpPositionSetpointRequest)
 
 // Port 0x07 (Generic Setpoint)
 
+
+/************************************ADDED SETPOINT FOR GTC ************************/
+struct crtpGtcSetpointRequest
+{
+  crtpGtcSetpointRequest(
+      uint16_t mode, float cmd1, float cmd2, float cmd3)
+      : header(0X07,0),type(9),mode(mode),cmd1(cmd1),cmd2(cmd2),cmd3(cmd3)
+  {
+  }
+  const crtp header;
+  uint8_t type;
+  uint16_t mode;
+  float cmd1;
+  float cmd2;
+  float cmd3;
+}__attribute__((packed));
+CHECKSIZE(crtpGtcSetpointRequest);
+/************************************ADDED SETPOINT FOR GTC ************************/
 struct crtpFullStateSetpointRequest
 {
   crtpFullStateSetpointRequest(

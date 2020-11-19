@@ -230,6 +230,20 @@ void Crazyflie::sendFullStateSetpoint(
   sendPacket(request);
 }
 
+/************************************ADDED SETPOINT FOR GTC ************************/
+
+void Crazyflie::sendGtcSetpoint(
+      uint16_t mode, float cmd1, float cmd2, float cmd3)
+{
+  crtpGtcSetpointRequest request(
+     mode,cmd1,cmd2,cmd3);
+  sendPacket(request);
+}
+
+
+/************************************ADDED SETPOINT FOR GTC ************************/
+
+
 void Crazyflie::sendVelocityWorldSetpoint(
         float x, float y, float z, float yawRate)
 {
